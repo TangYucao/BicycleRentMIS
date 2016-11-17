@@ -1,0 +1,76 @@
+html {
+    font-family: sans-serif; 
+    line-height: 1.15; 
+    /*-ms-text-size-adjust: 100%; */
+	height:auto;
+    -webkit-text-size-adjust: 100%;
+}
+body
+{
+	margin: 0;
+}
+p
+{
+	font-size: 20px;
+	text-align: center;
+	color: #000;
+}
+.BackGround
+{
+	margin: 0;
+	padding: 0;
+	position:relative;
+}
+.WeiChat
+{
+	position:absolute;
+	font-family:微软雅黑;
+	top: 50px;
+	left: 300px;
+}
+.WeiBo
+{
+	position: absolute;
+	font-family: STXihei;
+	top: 280px;
+	left: 300px;
+}
+.Poetry
+{
+	position:absolute;
+	font-size: 23px;
+	font-family: STKaiti;
+	/*color: #FFE4B5;*/
+	color: #000;
+	top: 100px;
+	left: 600px;
+}
+
+.what_you{
+	position:absolute;
+	font-size: 60px;
+	font-family: STKaiti;
+	/*color: #FFE4B5;*/
+	color: #000;
+	top:550px;
+	left: 300px;
+}
+.Sentence
+{
+	position:absolute;
+	font-family:"Times New Roman";
+	font-size: 30px;
+	color:white;
+	top:500px;
+	left:280px;
+}
+#BackGroundPicture
+{
+	height: auto;
+	width: 100%;
+}
+#WeiChatPicture,#WeiBoPicture
+{
+	width: 150px;
+	height: 150px;
+}

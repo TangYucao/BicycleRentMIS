@@ -1,0 +1,112 @@
+.personal_mainpage{
+     height:700px;
+     background-color: dimgrey;
+ }
+
+.sidebar{
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    left:0px;
+    top:160px;
+}
+
+.sidebar nav ul li{
+    height: 65px;
+    list-style: none;
+    color:#fff;
+    background-color: antiquewhite;
+    margin: 35px 30px 10px 30px;
+    padding:10px;
+    line-height: 65px;
+}
+
+.sidebar nav ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    display:block;
+    text-align: center;
+}
+
+#cutoff_line{
+    width: 2px;
+    height: 700px;
+    background-color: #fff;
+    position: absolute;
+    left:300px;
+    top:137px;
+}
+
+.details{
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    left: 302px;
+    top:160px;
+}
+/*表格中的字体样式*/
+.details div table tr td{
+    padding: 10px;
+    font-size: 20px;
+}
+
+/*个人信息*/
+.details #personal_infor{
+    position:absolute;
+    top:100px;
+    left:200px;
+    color: yellow;
+    visibility: hidden;
+}
+
+/*租售记录*/
+.details #rent_record{
+    position:absolute;
+    top:50px;
+    left:100px;
+    color: lawngreen;
+    visibility: hidden;
+}
+
+/*骑行圈*/
+.details #bike_circle{
+    position:absolute;
+    top:50px;
+    left:100px;
+    color: lawngreen;
+    visibility: hidden;
+}
+
+.details #bike_circle .date_style{
+    font-size: 10px;
+}
+
+.details #bike_circle img {
+    width: 480px;
+    height: 270px;
+}
+
+/*个人账户*/
+.details #personal_account{
+    position:absolute;
+    top:50px;
+    left:100px;
+    color: lawngreen;
+    visibility: hidden;
+}
+
+/*信用系统*/
+.details #credit_system{
+    position:absolute;
+    top:50px;
+    left:100px;
+    color: lawngreen;
+    /*visibility: hidden;*/
+}
+
+.details #credit_system iframe{
+    width: 900px;
+    height: 700px;
+}
+
+

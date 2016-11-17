@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>自行车租赁网站</title>
+	<link rel="stylesheet" type="text/css" href="../css/style/index.css" />
+</head>
+<body background="../images/background.jpg">
+
+<!--顶部用户方块-->
+<div class="usersBlock">
+	<a href="">用户首页</a>
+</div>
+
+<!--顶部方块-->
+<div class="headTitle">
+	<div class="logo">
+		<img src="../images/logo.jpg" class="logoTop" />
+	</div>
+</div>
+
+<!--中间方块，包括菜单和iframe窗口-->
+<div class="middleBlock">
+	<!--菜单栏-->
+	<div class="listBlock">
+		<div class="listBlockLink">
+				<div>
+				<div class="allBikeLink">
+					<a href="/springMVCT1/manager/toShowPage" class="showPage" target="displayWindow">
+						<b>所有车辆</b>
+					</a>
+				</div>
+				<div class="allBikeLink addBike">
+					<a href="/springMVCT1/manager/toAddNewBike" class="addNewBike" target="displayWindow">
+						<b>添加车辆</b>
+					</a>
+				</div>
+			</div>
+			<div class="blankBlock"><p>-·-·-·-·-</p></div>
+		</div>
+
+	</div>
+	<!--iframe-->
+	<div class="iframeBlock">
+		<iframe src="/springMVCT1/manager/toShowPage" class="iframeWin" name="displayWindow" scrolling="yes"></iframe>
+	</div>
+</div>
+
+<!--底部方块-->
+<div class="buttonBlock">
+	
+</div>
+</body>
+</html>

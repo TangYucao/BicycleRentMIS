@@ -1,0 +1,72 @@
+@font-face
+{
+	font-family: SIMYOU;
+	src:url('../../font/SIMYOU.TTF');
+}
+html {
+    font-family: sans-serif; 
+    line-height: 1.15; 
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%;
+}
+body
+{
+	margin: 0 auto;
+	padding:0;
+	width: 1000px;
+	background-image: url('../../images/background.png');
+	background-size: 100%;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+#return
+{
+	width:100px;
+	border-radius:1em;
+	padding:5px;
+	margin-top:20px;
+	color:white;
+	background-color:#696969;
+}
+#picture
+{
+	float:left;
+	width:500px;
+	margin-top: 40px;
+}
+#information
+{
+	float:right;
+	width:500px;
+	margin-top: 13px;
+	font-family: SIMYOU;
+	font-size: 25px;
+}
+#information p
+{
+	margin-left: 20px;
+}
+#push
+{
+	text-align: center;
+	width:500px;
+}
+#rent
+{
+	width:150px;
+	height:50px;
+	font-size: 20px;
+	border-radius:1em;
+	color:white;
+	background-color:#696969;
+}
+select {
+  border: solid 0px #000;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background: url("../../images/arrow.png") no-repeat scroll right center transparent;
+  padding-right: 14px;
+  font-size: 15px;
+}
+select::-ms-expand { display: none; }

@@ -1,0 +1,15 @@
+.register_main{
+    height: 700px;
+    background-color: #000;
+    /*text-align: center;*/
+    color: #fff;
+}
+
+.register_main #login_form{
+    margin:100px 0px 10px 600px;
+}
+
+.register_main #login_form input{
+
+    margin:10px 0px 10px 50px;
+}

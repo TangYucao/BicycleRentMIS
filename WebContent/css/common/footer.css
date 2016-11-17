@@ -1,0 +1,28 @@
+/*底部*/
+.footer{
+    height: 200px;;
+    background-color: #000;
+}
+
+.div2{
+    background-color: #000;
+}
+
+.hr1{
+    margin:20px 0px 0px 0px;
+    height: 2px;
+    background-color: darkgray;
+}
+
+.buttom_button{
+    text-align: center;
+    margin:30px 20px 0px 0px;
+    pading:10px;
+}
+
+.buttom_text{
+    font-size:10px;
+    margin:70px 10px 0 0;
+    text-align: center;
+    color:#fff;
+}

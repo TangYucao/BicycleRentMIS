@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>添加车辆</title>
+	<link rel="stylesheet" type="text/css" href="../css/style/addNewBike.css" />
+</head>
+<body>
+	<p class="addBikeTitle">添加车辆</p>
+	<hr class="titleLine">
+	<div class="formBlock">
+	<form action="/springMVCT1/bicycle/addBicycle" method="post" enctype="multipart/form-data">
+		<ul>
+			<li>是否上架：
+				<select name="bstatus">
+					<option value="t">是</option>
+					<option value="f">否</option>
+				</select>
+			</li>
+			<li>车辆类型：
+				<select name="btype">
+					<option value="shandi">山地车</option>
+					<option value="nvshi">女式车</option>
+					<option value="zhedie">折叠车</option>
+					<option value="sifei">死飞</option>
+					<option value="haohua">豪华车</option>
+				</select>
+			</li>
+			<li>租金：<input type="text" name="brentmoney"></li>
+			<li>单日价格：<input type="text" name="bpriceperday"></li>
+			<li><input type="hidden" name="bdamage" value="f"/></li>
+			<li id="upPhoto">上传照片：<input type="file" name="file"></li>
+			<li id="submitBtn"><input type="submit" name="submit"></li>
+			
+		</ul>
+	</form>
+	</div>
+</body>
+</html>

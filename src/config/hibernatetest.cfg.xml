@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 每次增加一个实体Entity类，就要改 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ 
+    <session-factory> 
+         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	    <property name="connection.url">jdbc:mysql://localhost/springMVC</property>
+	    <property name="connection.username">root</property>
+	    <property name="connection.password">111</property>
+	         
+	    <!-- JDBC connection pool (use the built-in) -->
+	    <!-- <property name="connection.pool_size">1</property> -->
+	         
+	    <!-- SQL dialect -->
+	    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+	         
+	    <!-- Echo all executed SQL to stdout -->
+	    <property name="show_sql">true</property>
+	    
+		<mapping class="com.tyc.web.entity.Manager"/>
+		<mapping class="com.tyc.web.entity.User"/>
+		<mapping class="com.tyc.web.entity.Bicycle"/>
+		<mapping class="com.tyc.web.entity.Rent"/>
+    </session-factory>
+
+</hibernate-configuration>

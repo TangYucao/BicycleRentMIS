@@ -1,0 +1,27 @@
+.register_body{
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    height: auto;
+    width: auto;
+    background:url("../../images/register_bg.jpg");
+}
+
+.register_main{
+    float:right;
+    height:400px;
+    width: 500px;
+    background-color:rgba(166,158,168,0.8);
+    text-align: center;
+    margin:100px 100px 0 0;
+}
+
+.register_main #register_form{
+    margin:75px;
+    color:#fff;
+}
+
+.register_main #register_form input{
+    border-radius: 0.4em;
+    margin: 20px;
+}

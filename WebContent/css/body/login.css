@@ -1,0 +1,24 @@
+/*注册页面中间部分*/
+.login_main{
+    height:700px;
+    background-color: #000;
+    text-align: center;
+}
+
+
+#login_form{
+    color:#fff;
+    margin:200px 20px 0px 0px;
+}
+
+#login_form input{
+    margin: 20px;
+}
+
+
+
+
+
+
+
+

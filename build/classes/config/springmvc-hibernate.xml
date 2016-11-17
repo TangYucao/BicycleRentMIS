@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+
+<!-- 配置hibernate,直接写配置信息, 见applicationContext.xml来自QqServer项目-->
+<beans> 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost/springMVC?useUnicode=true&amp;characterEncoding=utf-8"/>
+	    <property name="username" value="root"/>
+	    <property name="password" value="111"/>	
+	    <!--  <property name="initialSize" value="3"/>-->
+		 <!-- 连接池的最大值 -->
+		<!--   <property name="maxActive" value="500"/> -->
+	 	<!-- 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 -->
+		<!-- <property name="maxIdle" value="2"/> -->
+		<!--  最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请 -->
+		<!-- <property name="minIdle" value="1"/>-->
+    </bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> 
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			 <value>
+	        	hibernate.dialect=org.hibernate.dialect.MySQLDialect
+	        	hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+				hibernate.format_sql=true
+	 		</value>
+		</property>		
+		<property name="configLocations">
+			<list>
+				<value>
+					classpath*:config/hibernate.cfg.xml
+				</value>
+			</list>
+		</property> 
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="transactionBese" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+	lazy-init="true" abstract="true">
+		<property name="transactionManager" ref="transactionManager"></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="modify*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED,-Exception</prop>
+				<prop key="get*">PROPAGATION_NEVER</prop>
+				
+			</props>
+		</property>
+	</bean>
+	
+</beans>

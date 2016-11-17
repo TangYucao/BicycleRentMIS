@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 如果多写了一个Controller类，就要添加-->
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd" [
+<!ENTITY contextInclude SYSTEM "org/springframework/web/context/WEB-INF/contextInclude.xml">
+]>
+
+<beans>
+		<bean id="userDao" class="com.tyc.web.dao.UserDao">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+		<bean id="managerDao" class="com.tyc.web.dao.ManagerDao">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean id="bicycleDao" class="com.tyc.web.dao.BicycleDao">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<bean id="rentDao" class="com.tyc.web.dao.RentDao">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		<!-- 关键 -->
+		
+		<bean id="userServiceBase" class="com.tyc.web.service.UserService">
+			<property name="userDao" ref="userDao"/>
+			<property name="bicycleDao" ref="bicycleDao"/>
+			<property name="rentDao" ref="rentDao"/>
+		</bean> 
+		
+		<bean id="userService" parent="transactionBese">
+			<property name="target" ref="userServiceBase"></property>
+		</bean>
+	
+	
+	
+	
+		<!-- 关键 -->
+		<bean id="managerServiceBase" class="com.tyc.web.service.ManagerService">
+			<property name="managerDao" ref="managerDao"></property>
+			<property name="bicycleDao" ref="bicycleDao"/>
+		</bean> 
+		
+		<bean id="managerService" parent="transactionBese">
+			<property name="target" ref="managerServiceBase"></property>
+		</bean>
+		<!-- _______________________________________-->
+		
+		
+		<bean id="bicycleServiceBase" class="com.tyc.web.service.BicycleService">
+			<property name="bicycleDao" ref="bicycleDao"></property>
+		</bean> 
+		<bean id="bicycleService" parent="transactionBese">
+			<property name="target" ref="bicycleServiceBase"></property>
+		</bean>
+		
+</beans> 
+

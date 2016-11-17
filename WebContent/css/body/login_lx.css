@@ -1,0 +1,28 @@
+
+.login_body{
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    height: auto;
+    width: auto;
+    background:url("../../images/login_bg.jpg");
+}
+
+#login_main{
+    float:right;
+    height:400px;
+    width: 500px;
+    background-color:rgba(216,191,216,0.3);
+    text-align: center;
+    margin:100px 100px 0 0;
+}
+
+.login_body #login_form{
+    margin:100px;
+    color:#fff;
+}
+
+#login_form input{
+    border-radius: 0.4em;
+    margin: 20px;
+}

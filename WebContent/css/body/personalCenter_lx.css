@@ -1,0 +1,148 @@
+.personal_mainpage{
+    height:1000px;
+    /*background-color: #000000;*/
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    //height: auto;
+    width: 1920px;
+    background:url("../../images/personal_infor_details_bg.jpg");
+}
+
+#sidebar{
+    width: 300px;
+    height: 1000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sidebar nav{
+    width: 300px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#sidebar nav li{
+    height: 90px;
+    list-style: none;
+    margin: 40px;
+    border: 2px solid #fff;
+    padding: 0;
+    line-height: 90px;
+}
+
+#sidebar nav li a{
+    text-decoration: none;
+    color:#fff;
+    font-family: "Adobe 黑体 Std R";
+    font-size: 20px;
+    /*background-color: #2ab8ac;*/
+    margin:0px;
+    display:block;
+    text-align: center;
+}
+
+#pi_a{
+    background-color: #FF88C2;
+}
+
+#rr_a{
+    background-color: #009FCC;
+}
+
+#bc_a{
+    background-color: #33FF33;
+}
+
+#pa_a{
+    background-color: #9F88FF;
+}
+
+#cs_a{
+    background-color: #FFA488;
+}
+
+#cutoff_line{
+    width: 2px;
+    height: 1000px;
+    background-color: #fff;
+    position: absolute;
+    left:300px;
+    top:0px;
+}
+
+#details{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 300px;
+    top:0px;
+}
+/*表格中的字体样式*/
+#details div table tr td{
+    padding: 10px;
+    font-size: 20px;
+    color:#fff;
+}
+
+#details div{
+    color:#fff;
+}
+
+/*个人信息*/
+#details #personal_infor{
+    position:absolute;
+    top:50px;
+    left:50px;
+    /*color: yellow;*/
+    display: block;
+}
+
+/*租售记录*/
+#details #rent_record{
+    position:absolute;
+    top:50px;
+    left:50px;
+    /*color: lawngreen;*/
+    display:none;
+}
+
+/*骑行圈*/
+#details #bike_circle{
+    position:absolute;
+    top:50px;
+    left:50px;
+    /*color: lawngreen;*/
+    display:none;
+}
+
+#details #bike_circle .date_style{
+    font-size: 16px;
+}
+
+#details #bike_circle img {
+    width: 480px;
+    height: 270px;
+}
+
+/*个人账户*/
+#details #personal_account{
+    position:absolute;
+    top:50px;
+    left:50px;
+    /*color: lawngreen;*/
+    display:none;
+}
+
+/*信用系统*/
+#details #credit_system{
+    position:absolute;
+    top:50px;
+    left:50px;
+    /*color: lawngreen;*/
+    display:none;
+}
+

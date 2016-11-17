@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,firldset,table,td,img,div,dl,dt,dd,input{margin:0; padding:0;}
+html,body{height: 100%;}
+body{font-size:12px; font-family: "font/msyh.ttf";}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{resize:none; border:none; background:none;}
+a{text-decoration:none; color:#656565;}
+
+/*标题部分*/
+.addBikeTitle{font-size: 30px; font-weight: 600; margin-top: 20px; margin-left: 30px;}
+.titleLine{width: 1200px; margin-top: 10px; color: #4371C6;}
+
+/*表单部分*/
+.formBlock{width: 700px; margin: 0 auto; background: ; margin-top: 60px;}
+.formBlock ul li{height: 60px; font-size: 25px; color: #ED6215; font-weight: 900; font-family: "font/msyh.ttf";}
+.formBlock input{border: 3px solid #5D5A5A; height: 30px; width: 400px; margin-top: 20px;}
+.formBlock select{height: 40px; border: 3px solid #5D5A5A; font-size: 20px; width: 300px;}
+#upPhoto input{padding-left: 20px; width: 380px; font-size: 15px; border: none;}
+#submitBtn{margin-top: 40px;}
+#submitBtn input{width: 150px; height: 50px; background: #588EDE; border: 1px solid #6C6C6C; font-size: 25px;}

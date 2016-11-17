@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自行车——注册</title>
+    <link rel="stylesheet" href="../css/common/normalize.css">
+    <link rel="stylesheet" href="../css/common/header.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/body/register.css">
+    <link rel="stylesheet" href="../css/common/common.css">
+    <script type="text/javascript">
+        function goToLogin() {
+            window.location="./login.html"
+        }
+        //性别检测
+        function checkGender()
+        {
+            var man = document.getElementById("man");
+            var women = document.getElementById("women")
+            if(man.checked || women.checked)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+        function register() {
+            {
+                var username = document.getElementById("username").value;
+                var pickname=document.getElementById("pickname").value;
+                var gender; //性别
+                var phone = document.getElementById("phone").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                var verify_password = document.getElementById("verify_password").value;
+
+
+                //“^”是代表以什么开头，“$”是代表以什么结尾。比如：/^\dA$/ //这个就匹配，以数字开头，并且一大写字母A结尾的字符串。
+                //var reg_username = /[A-Za-z][A-Za-z0-9_]{6,16}/;
+                var reg_username = /^[a-zA-Z][a-zA-Z0-9]{5,16}$/;
+                var reg_password = /^[a-zA-Z0-9_]{6,12}$/;
+                var reg_mail = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+                var reg_phone = /^1\d{10}$/;
+                //身份证校验： reg=/\d{17}[0-9xX]/ 前17位为数字第18位为数字或者字母X或x
+
+                if(!reg_username.test(username)) //用户名判断
+                {
+                    alert("用户名输入有误，只能是字母数字下划线，6-16位");
+                }
+                else if(!reg_username.test(pickname)) //用户名判断
+                {
+                    alert("昵称输入有误，只能是字母数字下划线，6-16位");
+                }
+                else if(!checkGender())
+                {
+                    alert("请选择性别");
+                }
+                else if(!reg_phone.test(phone))
+                {
+                    alert("手机号输入有误");
+                }
+                else if(!reg_mail.test(email))
+                {
+                    alert("邮箱输入有误")
+                }
+                else if(!reg_password.test(password))
+                {
+                    alert("密码输入有误，只能是字母数字下划线6-12位");
+                }
+                else if(verify_password != password)
+                {
+                    alert("两次密码输入的不一致");
+                }
+                else
+                {
+                    alert("注册成功");
+                    window.setTimeout("goToLogin()",1000);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<header class="header">
+    <nav class="header_nav">
+        <ul>
+            <li class="logo"><a href="#">自行车logo</a></li>
+            <li><a href="#">官网首页</a></li>
+            <li><a href="#">最新活动</a></li>
+            <li><a href="#">我要租车</a></li>
+            <li><a href="#">我要卖车</a></li>
+            <li><a href="#">个人中心</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="register_main">
+    <div class="hr"></div>
+    <form id="login_form">
+        <br/>
+        姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+        <input type="text" name="username" id="username">
+        <br/>
+        昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称
+        <input type="text" name="pickname" id="pickname">
+        <br/>
+        性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别
+        <input type="radio" name="gender" id="man" value="male">男
+        <input type="radio" name="gender" id="woman" value="female">女
+        <br/>
+        手机号码
+        <input type="text" name="phone" id="phone">
+        <br/>
+        邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱
+        <input type="text" name="email" id="email">
+        <br/>
+        密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码
+        <input type="password" name="password" id="password">
+        <br/>
+        确认密码
+        <input type="password" name="verify_password" id="verify_password">
+        <br/>
+        <input type="button" onclick="register()" value="注册">
+    </form>
+</div>
+
+<footer class="footer">
+    <div class="hr"></div>
+    <div class="hr1"></div>
+    <div class="buttom_button">
+        <button id="map">取车地图</button>
+        <button id="callus">联系我们</button>
+        <div class="buttom_text">
+            <p>©zixinche.com 蜀ICP证8888888号 蜀ICP备88888888号 蜀公网安备88888888888号 蜀网文[2016]8888-8888号</p>
+            <p>举报电话：134-xxxx-xxxx，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+</body>
+</html>

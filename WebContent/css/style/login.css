@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,firldset,table,td,img,div,dl,dt,dd,input{margin:0; padding:0;}
+html,body{width: 100%;}
+body{font-size:12px; position: relative; overflow-x: auto; background: #000000;}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{resize:none; border:none; background:none;}
+a{text-decoration:none; color:#656565;}
+.clear{clear:both;}
+
+.outBlock{width: 1525px;}
+
+/*登陆方块*/
+.logBlock{background: #FFF; height: 280px; width: 600px; margin: auto auto; margin-top: 200px; padding: 10px;}
+.pageTitle{font-size: 25px; color: #0D95C1; margin-left: 15px; font-weight: 900;}
+.titleLine{width: 500px; margin-top: 10px;}
+.logBlock ul li{font-size: 25px; font-weight: 800; margin-top: 30px; margin-left: 40px;}
+.logBlock ul li input{border: 1px solid; height: 35px; width: 300px; font-size: 20px;}
+.submitBtn{height: 30px; width: 150px; background: #3476F0; border: none;}
+#subBtn{height: 30px; width: 150px; background: #3476F0; border: none; font-weight: 600; color: #FFF;}

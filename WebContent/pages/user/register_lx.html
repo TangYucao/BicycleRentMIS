@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自行车租赁系统——注册</title>
+    <link rel="stylesheet" href="../css/common/normalize.css">
+    <link rel="stylesheet" href="../css/body/register_lx.css">
+    <link rel="stylesheet" href="../css/common/common.css">
+    <script type="text/javascript">
+        function goToLogin() {
+           	document.getElementById('register_form').submit(); //执行提交form表单操作
+           	window.location="/springMVCT1/user/afterRegister";
+        }
+
+        function register() {
+            {
+                var phone = document.getElementById("phone").value;
+                var password = document.getElementById("password").value;
+                var verify_password = document.getElementById("verify_password").value;
+                var reg_password = /^[a-zA-Z0-9_]{6,12}$/;
+                var reg_phone = /^1\d{10}$/;
+                if(!reg_phone.test(phone))
+                {
+                    alert("手机号输入有误");
+                }
+                else if(!reg_password.test(password))
+                {
+                    alert("密码输入有误，只能是字母数字下划线6-12位");
+                }
+                else if(verify_password != password)
+                {
+                    alert("两次密码输入的不一致");
+                }
+                else
+                {
+                    alert("注册成功");
+                    window.setTimeout("goToLogin()",1000);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="register_body">
+<div class="register_main">
+    <form id="register_form" action="/springMVCT1/user/afterRegister" method="post" enctype="multipart/form-data">
+        <br/>
+        手机号码
+        <input type="text" name="uphonenum" id="phone">
+        <br/>
+        密&nbsp;&nbsp;&nbsp;&nbsp;码
+        <input type="password" name="upasswd" id="password">
+        <br/>
+        确认密码
+        <input type="password" name="verify_password" id="verify_password">
+        <br/>
+        <input type="hidden" name="umoney" value="0">
+        <button type="submit" onclick="register()" value="注册"></button>
+    </form>
+</div>
+</body>
+</html>

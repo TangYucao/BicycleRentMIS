@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 每次增加一个实体Entity类，就要改 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ 
+    <session-factory> 
+		<mapping class="com.tyc.web.entity.User"/>
+		<mapping class="com.tyc.web.entity.Manager"/>
+		<mapping class="com.tyc.web.entity.Bicycle"/>
+		<mapping class="com.tyc.web.entity.Rent"/>
+    </session-factory>
+
+</hibernate-configuration>

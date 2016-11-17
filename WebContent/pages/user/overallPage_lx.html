@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/common/normalize.css">
+    <link rel="stylesheet" href="../css/body/overallPage_lx.css">
+    <title>自行车租赁系统</title>
+    <script type="text/javascript">
+
+function setIframeHeight(child_page){
+    var iframe = document.getElementById("i_frame");
+    iframe.src=child_page;
+    try{
+        if(iframe.attachEvent){
+            iframe.attachEvent("onload", function(){
+                iframe.height =  iframe.contentWindow.document.documentElement.scrollHeight;
+            });
+            return;
+        }else{
+            iframe.onload = function(){
+                iframe.height = iframe.contentDocument.body.scrollHeight;
+            };
+            return;
+        }
+    }catch(e){
+        throw new Error('setIframeHeight Error');
+    }
+}
+    </script>
+</head>
+
+<body id="overall_page_body">
+
+<!--<video autoplay muted loop style="width:100%" id="vedio_bg">-->
+<!--<source src="../images/主页视频背景.mp4">-->
+<!--</video>-->
+
+<!--中间部分-->
+<!--/*头部*/-->
+<!--<div  id="section_1">-->
+    <header class="header">
+        <nav>
+            <ul>
+                <li id="logo"><a href="#"  onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toOfficalPage')">自行车</a></li>
+                <li><a href="#" id="official_page" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toOfficalPage')">官网首页</a></li>
+                <li><a href="#" id="new_activity" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toNewActivity')">最新活动</a></li>
+                <li><a href="#" id="rent_bike" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toRentPage')">我要租车</a></li><!-- rentPage_feng.html -->
+                <li><a href="#" id="sell_bike_page" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toUpladSellInfo')">我要卖车</a></li><!-- salePage_feng.html -->
+                <li><a href="#" id="personal_center" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toLogIn')">个人中心</a></li>
+            </ul>
+        </nav>
+        <div id="hr"></div>
+    </header>
+
+    <div class="center_section">
+        <!--<iframe id="test" scrolling="no"  src="login_lx.html"></iframe>-->
+        <!--<iframe id="test" scrolling="no"  src="register_lx.html"></iframe>-->
+        <iframe id="i_frame" scrolling="no" src="http://localhost:8080/springMVCT1/user/toOfficalPage"></iframe>
+
+    </div>
+
+    <!--/*底部*/-->
+    <footer class="footer">
+        <div id="hr1"></div>
+        <div id="hr2"></div>
+
+        <div id="button">
+            <button onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toGetMap')">取车地图</button>
+            <button onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toAboutUs')"> 关于我们</button>
+            <div id="button_text">
+                <p>©zixinche.com 蜀ICP证8888888号 蜀ICP备88888888号 蜀公网安备88888888888号 蜀网文[2016]8888-8888号</p>
+                <p>举报电话：134-xxxx-xxxx，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+<!--</div>-->
+
+</body>
+</html>
