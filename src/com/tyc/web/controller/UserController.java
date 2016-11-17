@@ -70,7 +70,10 @@ public class UserController {
 	
 	
 	@RequestMapping("/toRentPage")//租车以后
-	public String toRentPage(){
+	public String toRentPage(HttpServletRequest request){
+		List<Bicycle> tmpBicycleList=null;
+		tmpBicycleList=userService.getAllBicycle();
+		request.setAttribute("tmpBicycleList", tmpBicycleList);
 		return "/pages/user/rentPage_feng.html";
 	}
 	@RequestMapping("/afterRent")//租车以后

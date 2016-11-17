@@ -33,8 +33,8 @@ public boolean checkUser(User user) {
 }
 
 
-//ÓÃ»§ÐÅÏ¢Ò³Ãæ:·µ»Øattribute:user,rent,sell
-public User getUserByUid(int uid)//·µ»Ø¸öÈËÐÅÏ¢
+//ï¿½Ã»ï¿½ï¿½ï¿½Ï¢Ò³ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½attribute:user,rent,sell
+public User getUserByUid(int uid)//ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 {
 	return userDao.getUserByUid(uid);
 }
@@ -78,5 +78,26 @@ public RentDao getRentDao() {
 
 public void setRentDao(RentDao rentDao) {
 	this.rentDao = rentDao;
+}
+
+public List<Bicycle> getAllBicycle() {
+	// TODO Auto-generated method stub
+	return bicycleDao.getAllBicycle();
+}
+
+
+public Bicycle getBicycleByBid(int bid) {
+	// TODO Auto-generated method stub
+	Bicycle tmp=bicycleDao.getBicycleByBid(bid);
+	return tmp;
+}
+
+public List<Bicycle> selectBicycle(String btype, String bdamage, String bstatus, //Byã€€Cong Xin
+		float min_price, float max_price, String sort_name, boolean isASC){
+	return bicycleDao.selectFromBicycle(btype, bdamage, bstatus, min_price, max_price, sort_name, isASC);
+}
+
+public void updateBicycle(int bid, String column_name, String value){//Byã€€Cong Xin
+	bicycleDao.updateBicycle(bid, column_name, value);
 }
 }

@@ -1,9 +1,8 @@
-#Thu Nov 17 21:16:09 CST 2016
+#Thu Nov 17 22:04:58 CST 2016
 eclipse.preferences.version=1
 encoding//WebContent/addUser.jsp=UTF-8
 encoding//WebContent/pages/manager/bikeDetail.jsp=UTF-8
 encoding//WebContent/pages/manager/showPage.jsp=UTF-8
-encoding//WebContent/pages/manager/showPageTYC.jsp=UTF-8
 encoding//WebContent/pages/user/aboutUs_lx.html=UTF-8
 encoding//WebContent/pages/user/bikeCicle_lx.html=UTF-8
 encoding//WebContent/pages/user/getmap_lx.html=UTF-8
@@ -16,6 +15,7 @@ encoding//WebContent/pages/user/old/rentList.jsp=UTF-8
 encoding//WebContent/pages/user/overallPage_lx.html=UTF-8
 encoding//WebContent/pages/user/personalCenter_lx.jsp=UTF-8
 encoding//WebContent/pages/user/register_lx.html=UTF-8
+encoding//WebContent/pages/user/rentPage_feng.jsp=UTF-8
 encoding//src/com/tyc/web/dao/UserDao.java=UTF-8
 encoding//src/com/tyc/web/util/FileUpload.java=UTF-8
 encoding/<project>=UTF-8

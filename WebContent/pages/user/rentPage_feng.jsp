@@ -1,3 +1,6 @@
+<%@ page language="java" import="java.util.*,com.tyc.web.entity.*"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +34,14 @@
 	</ul>
 	<hr/>
 	<div id="content">
+		<c:forEach items="${tmpBicycleList }" var="bicycle">
 		<div id="list">
-			<a href="rentDetail_feng.html">
-				<img src="../images/bicycle1.jpg" id="listimage">
+			<a href="/springMVCT1/manager/toBikeDetail?bid=${bicycle.bid }">
+				<img src="../imgBicycle/${bicycle.bimageurl }" id="listimage">
 			</a>
-				<p>价格：/天  租金：</p>
+				<p>价格：${bicycle.bpriceperday }元/天  租金：${bicycle.bpriceperday }元</p>
 		</div>
+		</c:forEach>
 	</div>
 </body>
 </html>
