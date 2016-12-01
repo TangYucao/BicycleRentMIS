@@ -50,9 +50,11 @@ public void repair(Rent rent) {
 	bicycleDao.repair(rent);
 }
 
-public void addRent(Bicycle bicycle,String uphonenum) {
+public void addRent(String rfee,String rrenttime,Bicycle bicycle,String uphonenum) {
 	// TODO Auto-generated method stub
-	rentDao.addRent(bicycle,uphonenum);
+	int tmpBid=bicycle.getBid();
+	Bicycle tmpBicycle=bicycleDao.getBicycleByBid(tmpBid);
+	rentDao.addRent(rfee,rrenttime,tmpBicycle,uphonenum);
 }
 public List<Rent> getRentByUserPhonenum(String uphonenum){
 	System.out.println((bicycleDao == null));
@@ -99,5 +101,16 @@ public List<Bicycle> selectBicycle(String btype, String bdamage, String bstatus,
 
 public void updateBicycle(int bid, String column_name, String value){//By　Cong Xin
 	bicycleDao.updateBicycle(bid, column_name, value);
+}
+
+public Rent getRentByRid(int tmpRid) {
+	Rent tmp= rentDao.getRentByRid(tmpRid);
+	return tmp;
+}
+
+public List<Bicycle> getAllBicycleNotDamage() {
+	// TODO Auto-generated method stub
+	
+	return bicycleDao.getAllBicycleNotDamage();
 }
 }

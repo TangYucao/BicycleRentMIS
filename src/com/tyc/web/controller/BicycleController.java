@@ -1,4 +1,4 @@
-//Õâ¸öµØ·½À´×÷Îªview
+//ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½Îªview
 package com.tyc.web.controller;
 
 import java.io.File;
@@ -39,34 +39,34 @@ public class BicycleController {
 	public String addBicycle(Bicycle bicycle,HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException
 	{
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
-        //ÅÐ¶Ï request ÊÇ·ñÓÐÎÄ¼þÉÏ´«,¼´¶à²¿·ÖÇëÇó  
+        //ï¿½Ð¶ï¿½ request ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½,ï¿½ï¿½ï¿½à²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         if(multipartResolver.isMultipart(request)){  
-            //×ª»»³É¶à²¿·Örequest    
+            //×ªï¿½ï¿½ï¿½É¶à²¿ï¿½ï¿½request    
             MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
-            //È¡µÃrequestÖÐµÄËùÓÐÎÄ¼þÃû  
+            //È¡ï¿½ï¿½requestï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½  
             Iterator<String> iter = multiRequest.getFileNames();  
             while(iter.hasNext()){  
-                //¼ÇÂ¼ÉÏ´«¹ý³ÌÆðÊ¼Ê±µÄÊ±¼ä£¬ÓÃÀ´¼ÆËãÉÏ´«Ê±¼ä  
+                //ï¿½ï¿½Â¼ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ê±ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Ê±ï¿½ï¿½  
                 int pre = (int) System.currentTimeMillis();  
-                //È¡µÃÉÏ´«ÎÄ¼þ  
+                //È¡ï¿½ï¿½ï¿½Ï´ï¿½ï¿½Ä¼ï¿½  
                 MultipartFile file = multiRequest.getFile(iter.next());  
                 if(file != null){  
-                    //È¡µÃµ±Ç°ÉÏ´«ÎÄ¼þµÄÎÄ¼þÃû³Æ  
+                    //È¡ï¿½Ãµï¿½Ç°ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½  
                     String myFileName = file.getOriginalFilename();  
-                    //Èç¹ûÃû³Æ²»Îª¡°¡±,ËµÃ÷¸ÃÎÄ¼þ´æÔÚ£¬·ñÔòËµÃ÷¸ÃÎÄ¼þ²»´æÔÚ  
+                    //ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Îªï¿½ï¿½ï¿½ï¿½,Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
                     if(myFileName.trim() !=""){  
                         System.out.println(myFileName);  
-                        //ÖØÃüÃûÉÏ´«ºóµÄÎÄ¼þÃû  
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½  
                         bicycle.setBimageurl(myFileName);//tyc
                         String fileName = file.getOriginalFilename();  
-                        //¶¨ÒåÉÏ´«Â·¾¶  
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Â·ï¿½ï¿½  
                         String path=ContextLoader.getCurrentWebApplicationContext().getServletContext().getRealPath("/"); //tyc
                         path +=  "imgBicycle\\"+fileName;  
                         File localFile = new File(path);  
                         file.transferTo(localFile);  
                     }  
                 }  
-                //¼ÇÂ¼ÉÏ´«¸ÃÎÄ¼þºóµÄÊ±¼ä  
+                //ï¿½ï¿½Â¼ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½  
                 int finaltime = (int) System.currentTimeMillis();  
                 System.out.println(finaltime - pre);  
             }  
@@ -80,35 +80,36 @@ public class BicycleController {
 	@RequestMapping(value="/modBicycle")
 	public String modBicycle(Bicycle bicycle,HttpServletRequest request,HttpServletResponse response) throws IllegalStateException, IOException
 	{
+		System.out.println("BicycyleController-modBicycle:1");
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());  
-        //ÅÐ¶Ï request ÊÇ·ñÓÐÎÄ¼þÉÏ´«,¼´¶à²¿·ÖÇëÇó  
+        //ï¿½Ð¶ï¿½ request ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ï´ï¿½,ï¿½ï¿½ï¿½à²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
         if(multipartResolver.isMultipart(request)){  
-            //×ª»»³É¶à²¿·Örequest    
+            //×ªï¿½ï¿½ï¿½É¶à²¿ï¿½ï¿½request    
             MultipartHttpServletRequest multiRequest = (MultipartHttpServletRequest)request;  
-            //È¡µÃrequestÖÐµÄËùÓÐÎÄ¼þÃû  
+            //È¡ï¿½ï¿½requestï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½  
             Iterator<String> iter = multiRequest.getFileNames();  
             while(iter.hasNext()){  
-                //¼ÇÂ¼ÉÏ´«¹ý³ÌÆðÊ¼Ê±µÄÊ±¼ä£¬ÓÃÀ´¼ÆËãÉÏ´«Ê±¼ä  
+                //ï¿½ï¿½Â¼ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Ê±ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Ê±ï¿½ï¿½  
                 int pre = (int) System.currentTimeMillis();  
-                //È¡µÃÉÏ´«ÎÄ¼þ  
+                //È¡ï¿½ï¿½ï¿½Ï´ï¿½ï¿½Ä¼ï¿½  
                 MultipartFile file = multiRequest.getFile(iter.next());  
                 if(file != null){  
-                    //È¡µÃµ±Ç°ÉÏ´«ÎÄ¼þµÄÎÄ¼þÃû³Æ  
+                    //È¡ï¿½Ãµï¿½Ç°ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½  
                     String myFileName = file.getOriginalFilename();  
-                    //Èç¹ûÃû³Æ²»Îª¡°¡±,ËµÃ÷¸ÃÎÄ¼þ´æÔÚ£¬·ñÔòËµÃ÷¸ÃÎÄ¼þ²»´æÔÚ  
+                    //ï¿½ï¿½ï¿½ï¿½ï¿½Æ²ï¿½Îªï¿½ï¿½ï¿½ï¿½,Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
                     if(myFileName.trim() !=""){  
                         System.out.println(myFileName);  
-                        //ÖØÃüÃûÉÏ´«ºóµÄÎÄ¼þÃû  
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½  
                         bicycle.setBimageurl(myFileName);//tyc
                         String fileName = file.getOriginalFilename();  
-                        //¶¨ÒåÉÏ´«Â·¾¶  
+                        //ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½Â·ï¿½ï¿½  
                         String path=ContextLoader.getCurrentWebApplicationContext().getServletContext().getRealPath("/"); //tyc
                         path +=  "imgBicycle\\"+fileName;  
                         File localFile = new File(path);  
                         file.transferTo(localFile);  
                     }  
                 }  
-                //¼ÇÂ¼ÉÏ´«¸ÃÎÄ¼þºóµÄÊ±¼ä  
+                //ï¿½ï¿½Â¼ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½  
                 int finaltime = (int) System.currentTimeMillis();  
                 System.out.println(finaltime - pre);  
             }  

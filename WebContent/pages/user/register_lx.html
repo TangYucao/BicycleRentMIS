@@ -9,7 +9,7 @@
     <script type="text/javascript">
         function goToLogin() {
            	document.getElementById('register_form').submit(); //执行提交form表单操作
-           	window.location="/springMVCT1/user/afterRegister";
+           	//window.location="/springMVCT1/user/afterRegister";
         }
 
         function register() {
@@ -33,7 +33,7 @@
                 }
                 else
                 {
-                    alert("注册成功");
+                    alert("注册中");
                     window.setTimeout("goToLogin()",1000);
                 }
             }
@@ -47,14 +47,15 @@
         手机号码
         <input type="text" name="uphonenum" id="phone">
         <br/>
-        密&nbsp;&nbsp;&nbsp;&nbsp;码
+        密码&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="password" name="upasswd" id="password">
         <br/>
         确认密码
         <input type="password" name="verify_password" id="verify_password">
-        <br/>
         <input type="hidden" name="umoney" value="0">
-        <button type="submit" onclick="register()" value="注册"></button>
+        
+        <br/>
+        <input type="button" onclick="register()" value="注册">
     </form>
 </div>
 </body>

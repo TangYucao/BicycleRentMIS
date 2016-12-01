@@ -41,6 +41,7 @@ public void repair(Rent rent) {
 	String hql="update Bicycle b set bdamage='T' where b.bid=? "; 
 	Query query=sessionFactory.getCurrentSession().createQuery(hql);
 	query.setInteger(0, rent.getBicycle().getBid());
+	query.executeUpdate();
 }
 
 //�ܽ᣺�����Ҫ�ύɾ����update����Ҫ��ʵ��ҹ���
@@ -94,6 +95,15 @@ public List<Bicycle> getAllBicycle() {
 	return tmp;
 }
 
+public List<Bicycle> getAllBicycleNotDamage() {
+	String hql = " from Bicycle b where b.bdamage='F' ";
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	List<Bicycle> tmp=query.list();
+	System.out.println(tmp.size());
+	
+	return tmp;
+}
+
 public Bicycle getBicycleByBid(int bid) {
 	// TODO Auto-generated method stub
 	String hql="from Bicycle b where b.bid=? "; 
@@ -113,10 +123,40 @@ public List<Bicycle> selectFromBicycle(String btype, String bdamage, String bsta
 	else
 		hql += " where btype like \'%\' ";
 	
-	if (bdamage != null)
-		hql += " and bdamage like \'" + bdamage + "\' ";
+		hql += " and bdamage = 'F' ";
+	
+	if (bstatus != null)
+		hql += " and bstatus like \'" + bstatus + "\' ";
 	else
-		hql += " and bdamage like \'%\' ";
+		hql += " and bstatus like \'%\' ";
+	
+	hql += " and bpriceperday between " + min_price + " and " + max_price + " ";
+
+	if (sort_name != null)
+		hql += " order by " + sort_name + " ";
+	else
+		hql += " order by bid ";
+	
+	if (isASC)
+		hql += " ASC ";
+	else
+		hql += " DESC ";
+	
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);	
+	List<Bicycle> list = query.list();
+	return list;
+}
+
+
+public List<Bicycle> selectFromBicycleManager(String btype, String bdamage, String bstatus, float min_price, float max_price, String sort_name, boolean isASC)
+{
+	String hql = "from Bicycle";
+	
+	if (btype != null)
+		hql += " where btype like \'" + btype + "\' ";
+	else
+		hql += " where btype like \'%\' ";
+	
 	
 	if (bstatus != null)
 		hql += " and bstatus like \'" + bstatus + "\' ";

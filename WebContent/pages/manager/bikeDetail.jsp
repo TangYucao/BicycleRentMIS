@@ -18,12 +18,18 @@
 		<li><input type="hidden" name="bid" value="${bid }"/></li>
 		<li>是否上架：
 				<select name="bstatus">
-					<option value="t">是</option>
-					<option value="f">否</option>
+					<option value="是">是</option>
+					<option value="否">否</option>
+				</select>
+			</li>
+			<li>是否需要维修：
+				<select name="bdamage" >
+					<option value="F">否</option>
+					<option value="T">是</option>
 				</select>
 			</li>
 			<li>车辆类型：
-				<select name="btype">
+				<select name="btype" >
 					<option value="shandi">山地车</option>
 					<option value="nvshi">女式车</option>
 					<option value="zhedie">折叠车</option>
@@ -34,10 +40,9 @@
 			<li>租金：<input type="text" name="brentmoney" value="${tmpBicycle.brentmoney }"></li>
 			<li>单日价格：<input type="text" name="bpriceperday" value="${tmpBicycle.bpriceperday }"></li>
 			<li id="upPhoto">上传照片：<input type="file" name="file" value="../imgBicycle/${tmpBicycle.bimageurl }"></li>
-		<li><input type="submit" name="submit" value="确认修改"  id="submit"></li>
-		<!--  input type="button" name="deleteBike" value="删除车辆"  id="delete">-->
+		<li><input type="submit" value="确认修改"  id="submit"></li>
 	</ul>
-	</form>
 </div>
+	</form>
 </body>
 </html>

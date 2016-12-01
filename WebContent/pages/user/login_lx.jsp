@@ -10,7 +10,8 @@
     <title>自行车租赁系统——登录</title>
     <script type="text/javascript">
         function go(){
-            location.href="/springMVCT1/user/afterLogIn";
+        document.getElementById('login_form').submit(); 
+            //location.href="/springMVCT1/user/afterLogIn";
         }
         function login() {
             var username=document.getElementById("uphone").value;
@@ -45,7 +46,7 @@
         密&nbsp;&nbsp;码
         <input type="password" name="upasswd" id="password">
         <br/>
-        <input type="submit" onclick="login()" value="登录">
+        <input type="button" onclick="login()" value="登录">
         <input type="button" onclick="location.href='/springMVCT1/user/toRegister'" value="注册">
     </form>
 </div>

@@ -23,13 +23,16 @@ public class RentDao {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public void addRent(Bicycle bicycle,String uphonenum)
+	public void addRent(String rfee,String rrenttime,Bicycle bicycle,String uphonenum)
 	{
 		Rent rent=new Rent();
 		rent.setBicycle(bicycle);
 		User user=new User();
 		user.setUphonenum(uphonenum);
+
 		rent.setUser(user);
+		rent.setRfee(rfee);
+		rent.setRrenttime(rrenttime);
 		this.sessionFactory.getCurrentSession().save(rent);
 	}
 
@@ -48,6 +51,16 @@ public class RentDao {
 		if (tmp!=null)	
 			return tmp;
 		else return null;
+	}
+
+	public Rent getRentByRid(int tmpRid) {
+		// TODO Auto-generated method stub
+		String hql="from Rent r where r.rid=? "; 
+		Query query=sessionFactory.getCurrentSession().createQuery(hql);
+		String tmpString=String.valueOf(tmpRid);
+		query.setString(0, tmpString);
+		Rent tmp=(Rent) query.uniqueResult();
+		return tmp; 
 	}
 
 }

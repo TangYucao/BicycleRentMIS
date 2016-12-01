@@ -62,7 +62,7 @@ public Bicycle getBicycleByBid(int bid) {
 
 public List<Bicycle> selectBicycle(String btype, String bdamage, String bstatus, //By　Cong Xin
 		float min_price, float max_price, String sort_name, boolean isASC){
-	return bicycleDao.selectFromBicycle(btype, bdamage, bstatus, min_price, max_price, sort_name, isASC);
+	return bicycleDao.selectFromBicycleManager(btype, bdamage, bstatus, min_price, max_price, sort_name, isASC);
 }
 
 public void updateBicycle(int bid, String column_name, String value){//By　Cong Xin

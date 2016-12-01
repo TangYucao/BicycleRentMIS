@@ -12,34 +12,34 @@
 <body>
 	<ul id="menu">
 		<li>
-			<a href="javascript:;"><img src="../images/shandi.jpg" id="shandi" class="shake-chunk"></a>
+			<a href="/springMVCT1/user/selectBicycle?btype=shandi"><img src="../images/shandi.jpg" id="shandi" class="shake-chunk"></a>
 			<p>山地车</p>
 		</li>
 	    <li>
-			<a href="javascript:;"><img src="../images/gonglu.jpg" id="gonglu" class="shake-chunk"></a>
+			<a href="/springMVCT1/user/selectBicycle?btype=gonglu"><img src="../images/gonglu.jpg" id="gonglu" class="shake-chunk"></a>
 			<p>公路车</p>
 		</li>
 	    <li>
-			<a href="javascript:;"><img src="../images/xiuxian.jpg" id="xiuxian" class="shake-chunk"></a>
-			<p>休闲车</p>
+			<a href="/springMVCT1/user/selectBicycle?btype=nvshi"><img src="../images/xiuxian.jpg" id="xiuxian" class="shake-chunk"></a>
+			<p>女士车</p>
 		</li>
 	    <li>
-			<a href="javascript:;"><img src="../images/zhedie.jpg" id="zhedie" class="shake-chunk"></a>
+			<a href="/springMVCT1/user/selectBicycle?btype=zhedie"><img src="../images/zhedie.jpg" id="zhedie" class="shake-chunk"></a>
 			<p>折叠车</p>
 		</li>
 	    <li>
-			<a href="javascript:;"><img src="../images/sifei.jpg" id="sifei" class="shake-chunk"></a>
+			<a href="/springMVCT1/user/selectBicycle?btype=sifei"><img src="../images/sifei.jpg" id="sifei" class="shake-chunk"></a>
 			<p>死飞</p>
 		</li>
 	</ul>
 	<hr/>
-	<div id="content">
+	<div id="content" style="width: 1020px;height: 500px;overflow-y: scroll;">
 		<c:forEach items="${tmpBicycleList }" var="bicycle">
 		<div id="list">
-			<a href="/springMVCT1/manager/toBikeDetail?bid=${bicycle.bid }">
+			<a href="/springMVCT1/user/toBicycleDetial?bid=${bicycle.bid }">
 				<img src="../imgBicycle/${bicycle.bimageurl }" id="listimage">
 			</a>
-				<p>价格：${bicycle.bpriceperday }元/天  租金：${bicycle.bpriceperday }元</p>
+				<p>车辆ID:${bicycle.bid } <br/>价格：${bicycle.bpriceperday }元/天  租金：${bicycle.brentmoney }元</p>
 		</div>
 		</c:forEach>
 	</div>

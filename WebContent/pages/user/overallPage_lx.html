@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="../css/body/overallPage_lx.css">
     <title>自行车租赁系统</title>
     <script type="text/javascript">
+function clearCookie(uphonenum){
+	alert("1");
+		document.cookie=uphonenum+"= ; expires="+new Date(0);
+		alert("2");
+}
 
 function setIframeHeight(child_page){
     var iframe = document.getElementById("i_frame");
@@ -41,12 +46,13 @@ function setIframeHeight(child_page){
     <header class="header">
         <nav>
             <ul>
-                <li id="logo"><a href="#"  onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toOfficalPage')">自行车</a></li>
                 <li><a href="#" id="official_page" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toOfficalPage')">官网首页</a></li>
                 <li><a href="#" id="new_activity" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toNewActivity')">最新活动</a></li>
                 <li><a href="#" id="rent_bike" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toRentPage')">我要租车</a></li><!-- rentPage_feng.html -->
-                <li><a href="#" id="sell_bike_page" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toUpladSellInfo')">我要卖车</a></li><!-- salePage_feng.html -->
-                <li><a href="#" id="personal_center" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toLogIn')">个人中心</a></li>
+                <li><a href="#" id="sell_bike_page" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toUploadSellInfo')">我要卖车</a></li><!-- salePage_feng.html -->
+                <li><a href="#" id="personal_center" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toLogIn')">登陆系统</a></li>
+                <li><a href="#" id="personal_center" onclick="setIframeHeight('http://localhost:8080/springMVCT1/user/toUserDetail')">个人中心</a></li>
+                <li><a href="#" id="personal_logout" onclick="clearCookie('uphonenum')">退出登录</a></li>
             </ul>
         </nav>
         <div id="hr"></div>

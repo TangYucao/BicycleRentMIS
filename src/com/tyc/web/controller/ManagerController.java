@@ -72,7 +72,7 @@ public class ManagerController extends FileUpload{
 			response.addCookie(new Cookie("mid", manager.getMidString()));
 			return "/manager/toIndex";
 		} else
-			return "/pages/manager/fail.jsp";
+			return "/manager/toLogIn";
 	}
 
 //	//��ӳ���������ͼƬ��ȥִ��util�е�upload����
@@ -106,7 +106,7 @@ public class ManagerController extends FileUpload{
 			)
 	{
 		managerService.updateBicycle(bid, column_name, value);
-		return "";
+		return "/pages/manager/showPage.jsp";
 	}	
 }
 

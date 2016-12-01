@@ -46,12 +46,12 @@
 	<ul>
 		<c:forEach items="${tmpBicycleList }" var="bicycle">
 		<li>
-			<div class="bikeBox">
+			<div class="bikeBox" style="height: 313px">
 				<a href="/springMVCT1/manager/toBikeDetail?bid=${bicycle.bid }" class="bikePhotoToDis">
 					<img src="../imgBicycle/${bicycle.bimageurl }"  class="bikePhoto" />
 				</a>
 				<div class="bikeDis">
-					<p>编号：<b>${bicycle.bid }</b>  出租状态：<b>${bicycle.bstatus }</b></p>
+					<p>编号：<b>${bicycle.bid }</b>  出租状态：<b>${bicycle.bstatus }</b> 损坏状态：<b>${bicycle.bdamage }</b></p>
 					<p>类型：${bicycle.btype } </p>
 					<p>租金：${bicycle.brentmoney }元</p>
 					<p>价格：${bicycle.bpriceperday } 元/天</p>

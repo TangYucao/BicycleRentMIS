@@ -100,22 +100,6 @@
     </script>
 </head>
 <body style="overflow-x:hidden;overflow-y:hidden">
-<%
-    String uphonenum="";
-     //System.out.println(request.getCookies());//第一次访问时，后台输出null，刷新一次即能输出相应内容
-    if(null != request.getCookies()){
-        Cookie[] cookie = request.getCookies();
-        for(int i = 0; i < cookie.length; i++)
-        {
-            if(cookie[i].getName().equals("uphonenum"))
-            {
-                uphonenum = cookie[i].getValue();
-                break;
-            }
-        }
-    }
-    if(!uphonenum.equals("")){
-    %> 
 <!--/*中间部分*/-->
 <div class="personal_mainpage">
     <!--/*侧边栏*/-->
@@ -202,10 +186,7 @@
             <div id="account_infor">
                 <table>
                     <tr>
-                        <td>账户余额</td> <td></td> <td>100元</td><td>余额充足，请放心使用</td>
-                    </tr>
-                    <tr>
-                        <td>租赁押金</td> <td></td> <td>100元</td><td>已缴</td>
+                        <td>账户余额</td> <td></td> <td>${tmpUser.umoney }</td><td>余额充足，请放心使用</td>
                     </tr>
                     <tr>
                         <td>在租车辆</td> <td></td> <td>IDxxxxxxxx</td><td></td>
@@ -221,14 +202,5 @@
         </div>
     </div>
 </div>
-<%} else 
-	{%>
-	 	<ul class="nav">
-                        <li><a >用户还没有登录</a></li>
-                        
-                        
-                        <li><a href="http://localhost:8080/springMVCT1/user/toLogIn">点击登录</a></li>
-                    </ul>
-	<%} %>
 </body>
 </html>
